@@ -27,8 +27,28 @@ public class FileManager {
 
   public func Write(data: Data) -> Int {
     let count = fwrite(data.uBytes, 1, data.length, fp)
-    
+
     return count
+  }
+
+  public func Read(length: Int = Int.max) -> Data? {
+    var bytes: [UInt8] = []
+    var remaining = length
+    let buffer = UnsafeMutablePointer<UInt8>.alloc(1024)
+    defer {
+      buffer.dealloc(1024)
+    }
+
+    repeat {
+      let count = fread(buffer, 1, min(remaining, 1024), fp)
+      guard ferror(fp) == 0 else { return nil }
+      guard count > 0 else { continue }
+      bytes += Array(UnsafeBufferPointer(start: buffer, count: count).generate()).prefix(count)
+      remaining -= count
+    } while remaining > 0 && feof(fp) == 0
+
+    return Data(uBytes: bytes)
+
   }
 
 
