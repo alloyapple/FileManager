@@ -25,6 +25,12 @@ public class FileManager {
     guard fp != nil else { return nil }
   }
 
+  public func Write(data: Data) -> Int {
+    let count = fwrite(data.uBytes, 1, data.length, fp)
+    
+    return count
+  }
+
 
 
 
