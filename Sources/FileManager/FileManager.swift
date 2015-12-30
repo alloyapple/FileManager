@@ -31,7 +31,8 @@ public class FileManager {
     return count
   }
 
-  public func Read(length: Int = Int.max) -> Data? {
+
+  public func Read(length length: Int = Int.max) -> Data? {
     var bytes: [UInt8] = []
     var remaining = length
     let buffer = UnsafeMutablePointer<UInt8>.alloc(1024)
@@ -48,6 +49,16 @@ public class FileManager {
     } while remaining > 0 && feof(fp) == 0
 
     return Data(uBytes: bytes)
+
+  }
+
+  public func ReadString(length length: Int = Int.max) -> String? {
+    let data = Read(length: length)
+
+    guard data != nil else { return nil }
+    guard data?.string != nil else { return nil }
+
+    return data?.string
 
   }
 
