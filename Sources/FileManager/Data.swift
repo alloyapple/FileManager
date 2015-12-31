@@ -65,9 +65,9 @@ public struct Data: ArrayLiteralConvertible, StringLiteralConvertible {
   public var string: String? {
     switch raw {
       case .Bytes(let bytes):
-        ///TODO: add String support
-        ///return String(data: unsafeBitCast(bytes, [UInt8].self))
-        return nil
+        
+        return String(data: unsafeBitCast(bytes, [UInt8].self))
+
       case .Text(let string):
         return string
     }
