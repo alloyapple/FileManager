@@ -1,2 +1,11 @@
 # FileManager
-FileManager write with swift in linux
+
+FileManager for linux write with Swift
+
+## Compile
+
+Run the following command to compile the source:
+
+```
+swift build
+```
