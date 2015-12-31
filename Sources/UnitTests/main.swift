@@ -2,5 +2,6 @@ import Glibc
 import XCTest
 
 XCTMain([
-  FileManagerTest()
+  FileManagerTest(),
+  DataTest()
   ])
