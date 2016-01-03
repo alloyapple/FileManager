@@ -27,3 +27,18 @@ extension String {
     self.init(string)
   }
 }
+
+///use string with this way
+///let helloWorld = "Hello, world!"
+///var hello      = helloWorld[0...4]
+///print(hello)
+extension String {
+  subscript (r: Range<Int>) -> String {
+    get {
+      let startIndex = self.startIndex.advancedBy(r.startIndex)
+      let endIndex   = self.startIndex.advancedBy(r.endIndex)
+
+      return self[Range(start: startIndex, end: endIndex)]
+    }
+  }
+}
