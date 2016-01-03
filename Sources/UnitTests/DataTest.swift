@@ -9,7 +9,9 @@ class DataTest: XCTestCase {
   }
 
   func test() {
+    let data = Data(string: "Hello")
 
+    XCTAssert(data.string != nil)
     ///XCTAssert(data != nil)
   }
 }
