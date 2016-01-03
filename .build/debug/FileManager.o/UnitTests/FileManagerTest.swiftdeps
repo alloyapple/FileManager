@@ -1,0 +1,156 @@
+### Swift dependencies file v0 ###
+provides-top-level:
+- "FileManagerTest"
+provides-nominal:
+- "C9UnitTests15FileManagerTest"
+provides-member:
+- ["C9UnitTests15FileManagerTest", ""]
+depends-top-level:
+- "Void"
+- "String"
+- !private "print"
+- !private "StringLiteralType"
+- !private "FileManager"
+- "FileManagerTest"
+- !private "Data"
+- !private "XCTAssert"
+- !private "IntegerLiteralType"
+- "XCTestCase"
+- !private "FloatLiteralType"
+- !private "!="
+depends-member:
+- !private ["Ps9AnyObject", "FileManager"]
+- !private ["Ps9AnyObject", "Read"]
+- !private ["Ps9AnyObject", "XCTAssert"]
+- ["Ps9AnyObject", "allTests"]
+- !private ["Ps9AnyObject", "init"]
+- !private ["Ps9AnyObject", "print"]
+- !private ["Ps9AnyObject", "test"]
+- ["Ps9AnyObject", ""]
+- !private ["Ps23ArrayLiteralConvertible", "string"]
+- !private ["Sb", "deinit"]
+- !private ["Vs9Character", "deinit"]
+- !private ["Ps10Comparable", "init"]
+- !private ["Ps28CustomDebugStringConvertible", "init"]
+- !private ["V11FileManager4Data", "deinit"]
+- !private ["V11FileManager4Data", "string"]
+- !private ["Sd", "deinit"]
+- !private ["Ps9Equatable", "init"]
+- !private ["Ps41ExtendedGraphemeClusterLiteralConvertible", "init"]
+- !private ["Ps41ExtendedGraphemeClusterLiteralConvertible", "string"]
+- !private ["C11FileManager11FileManager", "Read"]
+- !private ["C11FileManager11FileManager", "init"]
+- !private ["C9UnitTests15FileManagerTest", "Data"]
+- !private ["C9UnitTests15FileManagerTest", "FileManager"]
+- ["C9UnitTests15FileManagerTest", "String"]
+- ["C9UnitTests15FileManagerTest", "Void"]
+- !private ["C9UnitTests15FileManagerTest", "XCTAssert"]
+- ["C9UnitTests15FileManagerTest", "allTests"]
+- ["C9UnitTests15FileManagerTest", "deinit"]
+- ["C9UnitTests15FileManagerTest", "init"]
+- !private ["C9UnitTests15FileManagerTest", "print"]
+- ["C9UnitTests15FileManagerTest", "test"]
+- !private ["Sf", "deinit"]
+- !private ["Ps8Hashable", "init"]
+- !private ["Si", "deinit"]
+- !private ["Vs5Int16", "deinit"]
+- !private ["Vs5Int32", "deinit"]
+- !private ["Vs5Int64", "deinit"]
+- !private ["Vs4Int8", "deinit"]
+- !private ["Ps14MirrorPathType", "init"]
+- !private ["Sq", "deinit"]
+- !private ["Ps16OutputStreamType", "init"]
+- !private ["Vs12StaticString", "deinit"]
+- !private ["Ps10Streamable", "init"]
+- !private ["SS", "init"]
+- !private ["Ps30StringInterpolationConvertible", "init"]
+- !private ["Ps24StringLiteralConvertible", "init"]
+- !private ["Ps24StringLiteralConvertible", "string"]
+- !private ["Su", "deinit"]
+- !private ["Vs6UInt16", "deinit"]
+- !private ["Vs6UInt32", "deinit"]
+- !private ["Vs6UInt64", "deinit"]
+- !private ["Vs5UInt8", "deinit"]
+- !private ["Sc", "deinit"]
+- !private ["Ps31UnicodeScalarLiteralConvertible", "init"]
+- !private ["Ps31UnicodeScalarLiteralConvertible", "string"]
+- !private ["P6XCTest10XCTestCase", "FileManager"]
+- !private ["P6XCTest10XCTestCase", "XCTAssert"]
+- ["P6XCTest10XCTestCase", "allTests"]
+- !private ["P6XCTest10XCTestCase", "print"]
+- !private ["P6XCTest10XCTestCase", "test"]
+- ["P6XCTest10XCTestCase", ""]
+- !private ["P6XCTest18XCTestCaseProvider", "FileManager"]
+- !private ["P6XCTest18XCTestCaseProvider", "XCTAssert"]
+- ["P6XCTest18XCTestCaseProvider", "allTests"]
+- !private ["P6XCTest18XCTestCaseProvider", "print"]
+- !private ["P6XCTest18XCTestCaseProvider", "test"]
+- ["P6XCTest18XCTestCaseProvider", ""]
+- !private ["Ps49_BuiltinExtendedGraphemeClusterLiteralConvertible", "init"]
+- !private ["Ps32_BuiltinStringLiteralConvertible", "init"]
+- !private ["Ps37_BuiltinUTF16StringLiteralConvertible", "init"]
+- !private ["Ps39_BuiltinUnicodeScalarLiteralConvertible", "init"]
+- !private ["Vs26_OptionalNilComparisonType", "deinit"]
+- !private ["Ps12_Reflectable", "init"]
+depends-nominal:
+- "Ps9AnyObject"
+- !private "Ps23ArrayLiteralConvertible"
+- !private "Sb"
+- !private "Vs9Character"
+- !private "Ps10Comparable"
+- !private "Ps28CustomDebugStringConvertible"
+- !private "V11FileManager4Data"
+- !private "Sd"
+- !private "Ps9Equatable"
+- !private "Ps41ExtendedGraphemeClusterLiteralConvertible"
+- !private "C11FileManager11FileManager"
+- "C9UnitTests15FileManagerTest"
+- !private "Sf"
+- !private "Ps8Hashable"
+- !private "Si"
+- !private "Vs5Int16"
+- !private "Vs5Int32"
+- !private "Vs5Int64"
+- !private "Vs4Int8"
+- !private "Ps14MirrorPathType"
+- !private "Sq"
+- !private "Ps16OutputStreamType"
+- !private "Vs12StaticString"
+- !private "Ps10Streamable"
+- !private "SS"
+- !private "Ps30StringInterpolationConvertible"
+- !private "Ps24StringLiteralConvertible"
+- !private "Su"
+- !private "Vs6UInt16"
+- !private "Vs6UInt32"
+- !private "Vs6UInt64"
+- !private "Vs5UInt8"
+- !private "Sc"
+- !private "Ps31UnicodeScalarLiteralConvertible"
+- "P6XCTest10XCTestCase"
+- "P6XCTest18XCTestCaseProvider"
+- !private "Ps49_BuiltinExtendedGraphemeClusterLiteralConvertible"
+- !private "Ps32_BuiltinStringLiteralConvertible"
+- !private "Ps37_BuiltinUTF16StringLiteralConvertible"
+- !private "Ps39_BuiltinUnicodeScalarLiteralConvertible"
+- !private "Vs26_OptionalNilComparisonType"
+- !private "Ps12_Reflectable"
+depends-dynamic-lookup:
+depends-external:
+- "/home/mac/swift-2.2/usr/lib/swift/linux/x86_64/Swift.swiftmodule"
+- "/home/mac/swift-2.2/usr/lib/swift/shims/UnicodeShims.h"
+- "/home/mac/swift-2.2/usr/lib/swift/shims/SwiftStdint.h"
+- "/home/mac/swift-2.2/usr/lib/swift/shims/SwiftStddef.h"
+- "/home/mac/swift-2.2/usr/lib/swift/shims/LibcShims.h"
+- "/home/mac/swift-2.2/usr/lib/swift/shims/RuntimeStubs.h"
+- "/home/mac/swift-2.2/usr/lib/swift/shims/RuntimeShims.h"
+- "/home/mac/swift-2.2/usr/lib/swift/shims/RefCount.h"
+- "/home/mac/swift-2.2/usr/lib/swift/shims/HeapObject.h"
+- "/home/mac/swift-2.2/usr/lib/swift/shims/GlobalObjects.h"
+- "/home/mac/swift-2.2/usr/lib/swift/shims/FoundationShims.h"
+- "/home/mac/swift-2.2/usr/lib/swift/shims/CoreFoundationShims.h"
+- "/home/mac/swift-2.2/usr/lib/swift/shims/module.map"
+- "/home/mac/swift-2.2/usr/lib/swift/linux/x86_64/XCTest.swiftmodule"
+- "/home/mac/swift-2.2/usr/lib/swift/linux/x86_64/Glibc.swiftmodule"
+- "/home/mac/swiftdev/FileManager/.build/debug/FileManager.swiftmodule"
+interface-hash: "b553eb106a3d850803f5d20d364ad452"

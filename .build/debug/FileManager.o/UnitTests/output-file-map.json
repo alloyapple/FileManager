@@ -1,0 +1,23 @@
+{
+  "": {
+    "swift-dependencies": "/home/mac/swiftdev/FileManager/.build/debug/FileManager.o/UnitTests/master.swiftdeps"
+  },
+  "/home/mac/swiftdev/FileManager/Sources/UnitTests/FileManagerTest.swift": {
+    "dependencies": "/home/mac/swiftdev/FileManager/.build/debug/FileManager.o/UnitTests/FileManagerTest.d",
+    "object": "/home/mac/swiftdev/FileManager/.build/debug/FileManager.o/Sources/UnitTests/FileManagerTest.swift.o",
+    "swiftmodule": "/home/mac/swiftdev/FileManager/.build/debug/FileManager.o/UnitTests/FileManagerTest~partial.swiftmodule",
+    "swift-dependencies": "/home/mac/swiftdev/FileManager/.build/debug/FileManager.o/UnitTests/FileManagerTest.swiftdeps"
+  },
+  "/home/mac/swiftdev/FileManager/Sources/UnitTests/DataTest.swift": {
+    "dependencies": "/home/mac/swiftdev/FileManager/.build/debug/FileManager.o/UnitTests/DataTest.d",
+    "object": "/home/mac/swiftdev/FileManager/.build/debug/FileManager.o/Sources/UnitTests/DataTest.swift.o",
+    "swiftmodule": "/home/mac/swiftdev/FileManager/.build/debug/FileManager.o/UnitTests/DataTest~partial.swiftmodule",
+    "swift-dependencies": "/home/mac/swiftdev/FileManager/.build/debug/FileManager.o/UnitTests/DataTest.swiftdeps"
+  },
+  "/home/mac/swiftdev/FileManager/Sources/UnitTests/main.swift": {
+    "dependencies": "/home/mac/swiftdev/FileManager/.build/debug/FileManager.o/UnitTests/main.d",
+    "object": "/home/mac/swiftdev/FileManager/.build/debug/FileManager.o/Sources/UnitTests/main.swift.o",
+    "swiftmodule": "/home/mac/swiftdev/FileManager/.build/debug/FileManager.o/UnitTests/main~partial.swiftmodule",
+    "swift-dependencies": "/home/mac/swiftdev/FileManager/.build/debug/FileManager.o/UnitTests/main.swiftdeps"
+  }
+}

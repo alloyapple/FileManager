@@ -2,6 +2,21 @@ import Glibc
 
 public class FileManager {
 
+  static func GetCwd() -> String? {
+    let cwd = getcwd(nil, Int(PATH_MAX))
+
+    guard cwd != nil else { return nil }
+
+    defer {
+      free(cwd)
+    }
+
+    guard let path = String.fromCString(cwd) else { return nil }
+
+
+    return path
+  }
+
   public enum Error: ErrorType {
     case OpenError(String)
     case ReadError(String)

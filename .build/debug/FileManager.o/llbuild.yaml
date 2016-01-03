@@ -1,0 +1,49 @@
+client:
+  name: swift-build
+
+tools: {}
+
+targets:
+  "": [<UnitTests>, <FileManager>]
+  UnitTests: [<UnitTests>]
+  FileManager: [<FileManager>]
+
+commands:
+  <UnitTests-swiftc>:
+    tool: swift-compiler
+    executable: "/home/mac/swift-2.2/usr/bin/swiftc"
+    inputs: ["<FileManager>","/home/mac/swiftdev/FileManager/Sources/UnitTests/FileManagerTest.swift","/home/mac/swiftdev/FileManager/Sources/UnitTests/DataTest.swift","/home/mac/swiftdev/FileManager/Sources/UnitTests/main.swift"]
+    outputs: ["<UnitTests-swiftc>","/home/mac/swiftdev/FileManager/.build/debug/UnitTests.swiftmodule","/home/mac/swiftdev/FileManager/.build/debug/FileManager.o/Sources/UnitTests/FileManagerTest.swift.o","/home/mac/swiftdev/FileManager/.build/debug/FileManager.o/Sources/UnitTests/DataTest.swift.o","/home/mac/swiftdev/FileManager/.build/debug/FileManager.o/Sources/UnitTests/main.swift.o"]
+    module-name: "UnitTests"
+    module-output-path: "/home/mac/swiftdev/FileManager/.build/debug/UnitTests.swiftmodule"
+    is-library: false
+    sources: ["/home/mac/swiftdev/FileManager/Sources/UnitTests/FileManagerTest.swift","/home/mac/swiftdev/FileManager/Sources/UnitTests/DataTest.swift","/home/mac/swiftdev/FileManager/Sources/UnitTests/main.swift"]
+    objects: ["/home/mac/swiftdev/FileManager/.build/debug/FileManager.o/Sources/UnitTests/FileManagerTest.swift.o","/home/mac/swiftdev/FileManager/.build/debug/FileManager.o/Sources/UnitTests/DataTest.swift.o","/home/mac/swiftdev/FileManager/.build/debug/FileManager.o/Sources/UnitTests/main.swift.o"]
+    import-paths: ["/home/mac/swiftdev/FileManager/.build/debug"]
+    temps-path: "/home/mac/swiftdev/FileManager/.build/debug/FileManager.o/UnitTests"
+    other-args: ["-j8","-Onone","-g","-I","/usr/local/include"]
+  <UnitTests>:
+    tool: shell
+    inputs: ["<UnitTests-swiftc>","/home/mac/swiftdev/FileManager/.build/debug/FileManager.o/Sources/UnitTests/FileManagerTest.swift.o","/home/mac/swiftdev/FileManager/.build/debug/FileManager.o/Sources/UnitTests/DataTest.swift.o","/home/mac/swiftdev/FileManager/.build/debug/FileManager.o/Sources/UnitTests/main.swift.o"]
+    outputs: ["<UnitTests>","/home/mac/swiftdev/FileManager/.build/debug/UnitTests"]
+    args: ["/home/mac/swift-2.2/usr/bin/swiftc","-o","/home/mac/swiftdev/FileManager/.build/debug/UnitTests","/home/mac/swiftdev/FileManager/.build/debug/FileManager.o/Sources/UnitTests/FileManagerTest.swift.o","/home/mac/swiftdev/FileManager/.build/debug/FileManager.o/Sources/UnitTests/DataTest.swift.o","/home/mac/swiftdev/FileManager/.build/debug/FileManager.o/Sources/UnitTests/main.swift.o","-g","/home/mac/swiftdev/FileManager/.build/debug/FileManager.a","-L/usr/local/lib"]
+    description: "Linking Executable:  .build/debug/UnitTests"
+  <FileManager-swiftc>:
+    tool: swift-compiler
+    executable: "/home/mac/swift-2.2/usr/bin/swiftc"
+    inputs: ["/home/mac/swiftdev/FileManager/Sources/FileManager/FileManager.swift","/home/mac/swiftdev/FileManager/Sources/FileManager/String+Extension.swift","/home/mac/swiftdev/FileManager/Sources/FileManager/Data.swift"]
+    outputs: ["<FileManager-swiftc>","/home/mac/swiftdev/FileManager/.build/debug/FileManager.swiftmodule","/home/mac/swiftdev/FileManager/.build/debug/FileManager.o/Sources/FileManager/FileManager.swift.o","/home/mac/swiftdev/FileManager/.build/debug/FileManager.o/Sources/FileManager/String+Extension.swift.o","/home/mac/swiftdev/FileManager/.build/debug/FileManager.o/Sources/FileManager/Data.swift.o"]
+    module-name: "FileManager"
+    module-output-path: "/home/mac/swiftdev/FileManager/.build/debug/FileManager.swiftmodule"
+    is-library: true
+    sources: ["/home/mac/swiftdev/FileManager/Sources/FileManager/FileManager.swift","/home/mac/swiftdev/FileManager/Sources/FileManager/String+Extension.swift","/home/mac/swiftdev/FileManager/Sources/FileManager/Data.swift"]
+    objects: ["/home/mac/swiftdev/FileManager/.build/debug/FileManager.o/Sources/FileManager/FileManager.swift.o","/home/mac/swiftdev/FileManager/.build/debug/FileManager.o/Sources/FileManager/String+Extension.swift.o","/home/mac/swiftdev/FileManager/.build/debug/FileManager.o/Sources/FileManager/Data.swift.o"]
+    import-paths: ["/home/mac/swiftdev/FileManager/.build/debug"]
+    temps-path: "/home/mac/swiftdev/FileManager/.build/debug/FileManager.o/FileManager"
+    other-args: ["-j8","-Onone","-g","-enable-testing","-I","/usr/local/include"]
+  <FileManager>:
+    tool: shell
+    inputs: ["<FileManager-swiftc>","/home/mac/swiftdev/FileManager/.build/debug/FileManager.o/Sources/FileManager/FileManager.swift.o","/home/mac/swiftdev/FileManager/.build/debug/FileManager.o/Sources/FileManager/String+Extension.swift.o","/home/mac/swiftdev/FileManager/.build/debug/FileManager.o/Sources/FileManager/Data.swift.o"]
+    outputs: ["<FileManager>","/home/mac/swiftdev/FileManager/.build/debug/FileManager.a"]
+    args: ["/bin/sh","-c","rm -f '/home/mac/swiftdev/FileManager/.build/debug/FileManager.a'; ar cr '/home/mac/swiftdev/FileManager/.build/debug/FileManager.a' '/home/mac/swiftdev/FileManager/.build/debug/FileManager.o/Sources/FileManager/FileManager.swift.o' '/home/mac/swiftdev/FileManager/.build/debug/FileManager.o/Sources/FileManager/String+Extension.swift.o' '/home/mac/swiftdev/FileManager/.build/debug/FileManager.o/Sources/FileManager/Data.swift.o'"]
+    description: "Linking Library:  .build/debug/FileManager.a"

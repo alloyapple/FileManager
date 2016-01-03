@@ -1,0 +1,7 @@
+version: "Swift version 2.2-dev (LLVM 7bae82deaa, Clang 53d04af5ce, Swift 5995ef2acd)"
+options: "cc5b004108cfe2693ca493ac71d55e64"
+build_time: [505179291, 417397000]
+inputs:
+  "/home/mac/swiftdev/FileManager/Sources/UnitTests/FileManagerTest.swift": [505178647, 0]
+  "/home/mac/swiftdev/FileManager/Sources/UnitTests/DataTest.swift": [505178760, 0]
+  "/home/mac/swiftdev/FileManager/Sources/UnitTests/main.swift": [504920335, 0]
