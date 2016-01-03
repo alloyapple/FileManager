@@ -4,7 +4,8 @@ import FileManager
 class FileManagerTest: XCTestCase {
   var allTests: [(String, Void -> Void)] {
     return [
-      ("FileManagerTest", test)
+      ("FileManagerTest", test),
+      ("FileManager getcwd", testgwd)
     ]
   }
 
@@ -15,5 +16,9 @@ class FileManagerTest: XCTestCase {
     print("data is \(data!.string)")
     XCTAssert(data != nil)
     XCTAssert(data?.string != nil)
+  }
+
+  func testgwd() {
+
   }
 }
