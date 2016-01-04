@@ -22,6 +22,9 @@ class FileManagerTest: XCTestCase {
     let path = FileManager.GetCwd()
     if let path = path {
       print("path is \(path)")
+
+      let files = FileManager.ListFiles(path)
+      print("file is \(files)")
     }
   }
 }

@@ -17,6 +17,35 @@ public class FileManager {
     return path
   }
 
+  public static func ListFiles(filePath: String) -> [String] {
+    let dir = opendir(filePath)
+    guard dir != nil else { return [] }
+
+    var result: [String] = []
+
+    defer {
+      closedir(dir)
+    }
+
+    var file = readdir(dir)
+    while (file != nil) {
+      let fileName = withUnsafePointer(&file.memory.d_name, { (ptr) -> String? in
+
+        let int8Ptr = unsafeBitCast(ptr, UnsafePointer<Int8>.self)
+        return String.fromCString(int8Ptr)
+      })
+
+      if let fileName = fileName {
+        result.append(fileName)
+      }
+
+
+      file = readdir(dir)
+    }
+
+    return result
+  }
+
   public enum Error: ErrorType {
     case OpenError(String)
     case ReadError(String)
