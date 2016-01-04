@@ -52,6 +52,13 @@ public class FileManager {
     return retValue
   }
 
+  public static func TmpNam() -> String? {
+    let name = tmpnam(nil)
+    let newName = unsafeBitCast(name, UnsafePointer<Int8>.self)
+
+    return String.fromCString(newName)
+  }
+
   public enum Error: ErrorType {
     case OpenError(String)
     case ReadError(String)
