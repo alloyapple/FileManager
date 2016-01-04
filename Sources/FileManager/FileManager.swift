@@ -46,6 +46,12 @@ public class FileManager {
     return result
   }
 
+  public static func TmpFile() -> UnsafeMutablePointer<FILE> {
+    let retValue = tmpfile()
+
+    return retValue
+  }
+
   public enum Error: ErrorType {
     case OpenError(String)
     case ReadError(String)
