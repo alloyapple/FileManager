@@ -2,7 +2,7 @@ import Glibc
 
 public class FileManager {
 
-  static func GetCwd() -> String? {
+  public static func GetCwd() -> String? {
     let cwd = getcwd(nil, Int(PATH_MAX))
 
     guard cwd != nil else { return nil }
