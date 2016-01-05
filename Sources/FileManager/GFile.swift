@@ -1,7 +1,10 @@
 import Glibc
 import Foundation
 
-class GFile {
+
+
+
+public class GFile {
 
   public enum Error: ErrorType {
     case OpenError(String)
