@@ -3,9 +3,9 @@ import Foundation
 
 let PATH_MAX = 4096
 
-public class FileManager {
+public class GFileManager {
 
-  public static let defaultFileManager = FileManager()
+  public static let defaultFileManager = GFileManager()
 
   public func GetCwd() -> String? {
     let cwd = getcwd(nil, Int(PATH_MAX))
@@ -17,7 +17,7 @@ public class FileManager {
     }
 
     guard let path = String.fromCString(cwd) else { return nil }
-    
+
     return path
   }
 
