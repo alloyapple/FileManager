@@ -14,11 +14,16 @@ class FileManagerTest: XCTestCase {
     let fileManager = GFileManager.defaultFileManager
     let curPath = fileManager.GetCwd()
     let fileList = fileManager.ListFiles(curPath!)
+    let homeDir = fileManager.HomeDir()
 
     print("curPath is \(curPath)")
     print("file list is \(fileList)")
+    print("home dir is \(homeDir)")
+
+
     XCTAssert(curPath != nil, "curPath is \(curPath)")
     XCTAssert(fileList.count > 0, "file count is zero")
+    XCTAssert(!homeDir.isEmpty, "home dir is empty")
 
     //let fileManager: FileManager? = FileManager(path: "/home/mac/swiftdev/testlib/Package.swift")
     //let data: Data? = fileManager?.Read()
