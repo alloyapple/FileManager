@@ -1,7 +1,11 @@
 import Glibc
+import Foundation
+
+let PATH_MAX = 4096
 
 public class FileManager {
 
+  ///public static let defaultFileManager = FileManager()
   public static func GetCwd() -> String? {
     let cwd = getcwd(nil, Int(PATH_MAX))
 
