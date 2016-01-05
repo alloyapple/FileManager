@@ -9,4 +9,9 @@ class GFile {
     fp = nil
   }
 
+  deinit {
+    if fp != nil {
+      close(fp)
+    }
+  }
 }
