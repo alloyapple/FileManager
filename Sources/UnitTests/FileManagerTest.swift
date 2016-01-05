@@ -5,12 +5,20 @@ class FileManagerTest: XCTestCase {
   var allTests: [(String, Void -> Void)] {
     return [
       ("FileManagerTest", test),
-      ("FileManager getcwd", testgwd),
       ("testTempFile", testTempFile)
     ]
   }
 
   func test() {
+
+    let fileManager = GFileManager.defaultFileManager
+    let curPath = fileManager.GetCwd()
+    let fileList = fileManager.ListFiles(curPath!)
+
+    print("curPath is \(curPath)")
+    print("file list is \(fileList)")
+    XCTAssert(curPath != nil, "curPath is \(curPath)")
+    XCTAssert(fileList.count > 0, "file count is zero")
 
     //let fileManager: FileManager? = FileManager(path: "/home/mac/swiftdev/testlib/Package.swift")
     //let data: Data? = fileManager?.Read()
@@ -19,15 +27,6 @@ class FileManagerTest: XCTestCase {
   //  XCTAssert(data?.string != nil)
   }
 
-  func testgwd() {
-  //  let path = FileManager.GetCwd()
-  //  if let path = path {
-  //    print("path is \(path)")
-//
-  //    let files = FileManager.ListFiles(path)
-  //    print("file is \(files)")
-  //  }
-  }
 
   func testTempFile() {
 //    let name = FileManager.TmpNam()
