@@ -5,7 +5,8 @@ class FileManagerTest: XCTestCase {
   var allTests: [(String, Void -> Void)] {
     return [
       ("FileManagerTest", test),
-      ("FileManager getcwd", testgwd)
+      ("FileManager getcwd", testgwd),
+      ("testTempFile", testTempFile)
     ]
   }
 
@@ -26,5 +27,15 @@ class FileManagerTest: XCTestCase {
       let files = FileManager.ListFiles(path)
       print("file is \(files)")
     }
+  }
+
+  func testTempFile() {
+    let name = FileManager.TmpNam()
+
+    if let name = name {
+      print("name is \(name)")
+    }
+
+    XCTAssert(name != nil)
   }
 }
