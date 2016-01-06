@@ -95,4 +95,13 @@ public class GFileManager {
 
   }
 
+  public func CreateFile(filePath: String) -> Bool {
+    let fileId = creat(filePath, UInt32(O_RDWR | O_CREAT))
+
+    guard fileId != -1 else { return false }
+
+    close(fileId)
+    return true
+  }
+
 }
