@@ -22,10 +22,13 @@ public class GFile {
   }
 
   private let fp: UnsafeMutablePointer<FILE>
+  private let filePath: String
 
 
   init?(path: String, mode: Mode = .ReadUpdate) {
-    fp = fopen(path, mode.rawValue)
+    self.filePath = path
+    
+    fp = fopen(self.filePath, mode.rawValue)
 
     guard fp != nil else { return nil }
   }
