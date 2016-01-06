@@ -16,7 +16,11 @@ class FileManagerTest: XCTestCase {
     let fileList = fileManager.ListFiles(curPath!)
     let homeDir = fileManager.HomeDir()
     let testfile = "\(homeDir)/testfile"
-    let fileExist = fileManager.FileIsExists(testfile)
+    var fileExist = fileManager.FileIsExists(testfile)
+    print("file exist \(fileExist)")
+    fileManager.CreateFile(testfile)
+    fileExist = fileManager.FileIsExists(testfile)
+    print("file exist \(fileExist)")
 
     print("curPath is \(curPath)")
     print("file list is \(fileList)")
