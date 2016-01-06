@@ -67,6 +67,16 @@ public class GFile {
 
   }
 
+  public func CreateFile(filePath: String) -> Bool {
+    let ceate_file = creat(filePath, UInt32(O_RDWR | O_CREAT))
+    if ceate_file != -1 {
+      close(ceate_file)
+      return true
+    } else {
+      return false
+    }
+  }
+
   deinit {
     if fp != nil {
       fclose(fp)
