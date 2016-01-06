@@ -15,10 +15,12 @@ class FileManagerTest: XCTestCase {
     let curPath = fileManager.GetCwd()
     let fileList = fileManager.ListFiles(curPath!)
     let homeDir = fileManager.HomeDir()
+    let testfile = "\(homeDir)/testfile"
 
     print("curPath is \(curPath)")
     print("file list is \(fileList)")
     print("home dir is \(homeDir)")
+    print("test file is \(testfile)")
 
 
     XCTAssert(curPath != nil, "curPath is \(curPath)")

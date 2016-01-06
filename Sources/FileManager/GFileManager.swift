@@ -90,4 +90,9 @@ public class GFileManager {
     }
   }
 
+  public func FileIsExists(fileName: String) -> Bool {
+    return access(fileName, F_OK) != -1
+
+  }
+
 }
