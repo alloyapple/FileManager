@@ -1,8 +1,0 @@
-version: "Swift version 2.2-dev (LLVM 7bae82deaa, Clang 53d04af5ce, Swift 5995ef2acd)"
-options: "87f123216d4f40c13df4561612f158a2"
-build_time: [505437710, 416249000]
-inputs:
-  "/home/mac/swiftdev/FileManager/Sources/FileManager/GFile.swift": [505437562, 0]
-  "/home/mac/swiftdev/FileManager/Sources/FileManager/GFileManager.swift": [505437683, 0]
-  "/home/mac/swiftdev/FileManager/Sources/FileManager/String+Extension.swift": [505126660, 0]
-  "/home/mac/swiftdev/FileManager/Sources/FileManager/Data.swift": [504882709, 0]
