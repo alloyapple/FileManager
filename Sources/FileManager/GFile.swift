@@ -25,9 +25,9 @@ public class GFile {
   private let filePath: String
 
 
-  init?(path: String, mode: Mode = .ReadUpdate) {
+  public init?(path: String, mode: Mode = .ReadUpdate) {
     self.filePath = path
-    
+
     fp = fopen(self.filePath, mode.rawValue)
 
     guard fp != nil else { return nil }

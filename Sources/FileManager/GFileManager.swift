@@ -96,10 +96,10 @@ public class GFileManager {
   }
 
   public func CreateFile(filePath: String) -> Bool {
-    let fileId = creat(filePath, UInt32(O_RDWR | O_CREAT))
+    let fileId = creat(filePath, S_IRWXG)
 
     guard fileId != -1 else { return false }
-
+    //fchmod(fileId, S_IRUSR|S_IWUSR|S_IRGRP|S_IROTH);
     close(fileId)
     return true
   }

@@ -29,6 +29,13 @@ class FileManagerTest: XCTestCase {
     print("test file is \(fileExist)")
 
 
+    let file = GFile(path:testfile, mode:.Write)
+
+    let data = Data(string: "Hello")
+    file?.Write(data)
+
+
+
     XCTAssert(curPath != nil, "curPath is \(curPath)")
     XCTAssert(fileList.count > 0, "file count is zero")
     XCTAssert(!homeDir.isEmpty, "home dir is empty")
