@@ -99,4 +99,18 @@ public class GFileManager {
     return retValue != -1
   }
 
+  public func GetFileDate(filePath: String) -> (NSDate, NSDate, NSDate)? {
+
+    guard FileIsExists(filePath) else { return nil }
+
+    var stat_struct = stat()
+    stat(filePath, &stat_struct)
+
+    let accessDate = NSDate(timeIntervalSince1970: Double(stat_struct.st_atim.tv_sec))
+    let modificationDate = NSDate(timeIntervalSince1970: Double(stat_struct.st_mtim.tv_sec))
+    let changeDate = NSDate(timeIntervalSince1970: Double(stat_struct.st_ctim.tv_sec))
+
+    return (accessDate, modificationDate, changeDate)
+  }
+
 }
