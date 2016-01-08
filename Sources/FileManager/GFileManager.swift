@@ -3,7 +3,7 @@ import Foundation
 
 let PATH_MAX = 4096
 
-public class GFileManager {
+final public class GFileManager {
 
   public static let defaultFileManager = GFileManager()
 
