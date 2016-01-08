@@ -64,21 +64,6 @@ public class GFileManager {
   }
 
   public func HomeDir() -> String {
-    /*
-    let uid = getuid()
-    let homeDirStruct = getpwuid(uid)
-
-    let HomeDirString = withUnsafePointer(&homeDirStruct.memory.pw_dir, { (ptr) -> String? in
-      let int8Ptr = unsafeBitCast(ptr, UnsafePointer<Int8>.self)
-      return String.fromCString(int8Ptr)
-    })
-
-    if let HomeDirString = HomeDirString {
-      return HomeDirString
-    } else {
-      return ""
-    }
-    */
 
     let home = getenv("HOME")
     let homeString = String.fromCString(home)
@@ -97,9 +82,7 @@ public class GFileManager {
 
   public func CreateFile(filePath: String) -> Bool {
     let fileId = creat(filePath, S_IRWXG)
-
     guard fileId != -1 else { return false }
-    //fchmod(fileId, S_IRUSR|S_IWUSR|S_IRGRP|S_IROTH);
     close(fileId)
     return true
   }
