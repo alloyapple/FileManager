@@ -90,11 +90,7 @@ public class GFileManager {
   public func RenameFile(oldName: String, newName: String) -> Bool {
     let retValue = rename(oldName, newName)
 
-    if retValue == -1 {
-      return false
-    } else {
-      return true
-    }
+    return retValue != -1
   }
 
   public func RemoveFile(filePath: String) -> Bool {
