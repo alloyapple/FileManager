@@ -36,9 +36,12 @@ class FileManagerTest: XCTestCase {
 
 
 
+
+
     XCTAssert(curPath != nil, "curPath is \(curPath)")
     XCTAssert(fileList.count > 0, "file count is zero")
     XCTAssert(!homeDir.isEmpty, "home dir is empty")
+    XCTAssert(fileManager.RemoveFile(testfile), "home dir is empty")
 
     //let fileManager: FileManager? = FileManager(path: "/home/mac/swiftdev/testlib/Package.swift")
     //let data: Data? = fileManager?.Read()
