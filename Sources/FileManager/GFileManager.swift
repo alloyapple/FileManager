@@ -97,4 +97,10 @@ public class GFileManager {
     }
   }
 
+  public func RemoveFile(filePath: String) -> Bool {
+    let retValue = remove(filePath)
+
+    return retValue != -1
+  }
+
 }
