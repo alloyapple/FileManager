@@ -87,4 +87,14 @@ public class GFileManager {
     return true
   }
 
+  public func RenameFile(oldName: String, newName: String) -> Bool {
+    let retValue = rename(oldName, newName)
+
+    if retValue == -1 {
+      return false
+    } else {
+      return true
+    }
+  }
+
 }
