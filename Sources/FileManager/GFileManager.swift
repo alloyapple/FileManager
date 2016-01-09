@@ -3,7 +3,7 @@ import Foundation
 
 let PATH_MAX = 4096
 
-public typealias fileDates = (accessDate: time_t, modifyDate: time_t, createDate: time_t)
+public typealias FileDate = (accessDate: time_t, modifyDate: time_t, createDate: time_t)
 
 public class GFileManager {
 
@@ -102,7 +102,7 @@ public class GFileManager {
   }
 
   //access date, modify date, create date
-  public func GetFileDate(filePath: String) -> fileDates? {
+  public func GetFileDate(filePath: String) -> FileDate? {
 
     guard FileIsExists(filePath) else { return nil }
 
