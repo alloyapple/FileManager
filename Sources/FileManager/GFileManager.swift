@@ -118,13 +118,28 @@ public class GFileManager {
     return access(filePath, X_OK) != -1
   }
 
+  ///TODO:
+  public func SetExecute(filePath: String, canexe: Bool) -> Bool {
+    return false
+  }
+
 
   public func CanRead(filePath: String) -> Bool {
     return access(filePath, R_OK) != -1
   }
 
+  ///TODO:
+  public func SetRead(filePath: String, canexe: Bool) -> Bool {
+    return false
+  }
+
   public func CanWrite(filePath: String) -> Bool {
     return access(filePath, W_OK) != -1
+  }
+
+  ///TODO:
+  public func SetWrite(filePath: String, canexe: Bool) -> Bool {
+    return false
   }
 
   public func IsDirectory(filePath: String) -> Bool {
