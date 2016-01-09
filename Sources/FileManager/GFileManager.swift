@@ -123,25 +123,33 @@ public class GFileManager {
     return access(filePath, W_OK) != -1
   }
 
-  //TODO:
   public func isDirectory(filePath: String) -> Bool {
-    let retValue = remove(filePath)
+    guard FileIsExists(filePath) else { return false }
 
-    return retValue != -1
+    var stat_struct = stat()
+    stat(filePath, &stat_struct)
+
+    return (stat_struct.st_mode & 61440 == 16384)
   }
 
-  //TODO:
   public func isFile(filePath: String) -> Bool {
-    let retValue = remove(filePath)
+    guard FileIsExists(filePath) else { return false }
 
-    return retValue != -1
+    var stat_struct = stat()
+    stat(filePath, &stat_struct)
+
+    return (stat_struct.st_mode & 61440 == 32768)
   }
 
-  //TODO:
-  public func isHidden(filePath: String) -> Bool {
-    let retValue = remove(filePath)
 
-    return retValue != -1
+  public func isHidden(filePath: String) -> Bool {
+    guard filePath.characters.count > 0 else { return false }
+
+    if filePath.characters.first == "." {
+      return true
+    } else {
+      return false
+    }
   }
 
 
