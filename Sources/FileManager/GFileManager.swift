@@ -99,6 +99,7 @@ public class GFileManager {
     return retValue != -1
   }
 
+  //access date, modify date, create date
   public func GetFileDate(filePath: String) -> (time_t, time_t, time_t)? {
 
     guard FileIsExists(filePath) else { return nil }
