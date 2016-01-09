@@ -163,7 +163,10 @@ public class GFileManager {
     stat(filePath, &stat_struct)
 
 
-    return (fileWithBytes: stat_struct.st_size, fileWithK: Double(stat_struct.st_size) / 1024, fileWithM: Double(stat_struct.st_size) / (1024 * 1024), fileWithG: Double(stat_struct.st_size) / (1024 * 1024 * 1024))
+    return (fileWithBytes: stat_struct.st_size,
+            fileWithK: Double(stat_struct.st_size) / 1024,
+            fileWithM: Double(stat_struct.st_size) / (1024 * 1024),
+            fileWithG: Double(stat_struct.st_size) / (1024 * 1024 * 1024))
   }
 
 
