@@ -111,9 +111,7 @@ public class GFileManager {
 
   //TODO:
   public func CanExecute(filePath: String) -> Bool {
-    let retValue = remove(filePath)
-
-    return retValue != -1
+    return access(filePath, X_OK) != -1
   }
 
   //TODO:
