@@ -1,7 +1,10 @@
 import Glibc
 import Foundation
 
-
+public enum FileSeparator: String {
+  case pathSeparator = "/"
+  case separator = ":"
+}
 
 
 public class GFile {
@@ -11,6 +14,7 @@ public class GFile {
     case ReadError(String)
     case WriteError(String)
   }
+
 
   public enum Mode: String {
     case Read = "r"
