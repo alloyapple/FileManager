@@ -109,23 +109,18 @@ public class GFileManager {
     return (stat_struct.st_atim.tv_sec, stat_struct.st_mtim.tv_sec, stat_struct.st_ctim.tv_sec)
   }
 
-  //TODO:
+
   public func CanExecute(filePath: String) -> Bool {
     return access(filePath, X_OK) != -1
   }
 
-  //TODO:
-  public func CanRead(filePath: String) -> Bool {
-    let retValue = remove(filePath)
 
-    return retValue != -1
+  public func CanRead(filePath: String) -> Bool {
+    return access(filePath, R_OK) != -1
   }
 
-  //TODO:
   public func canWrite(filePath: String) -> Bool {
-    let retValue = remove(filePath)
-
-    return retValue != -1
+    return access(filePath, W_OK) != -1
   }
 
   //TODO:
