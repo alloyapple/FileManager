@@ -36,7 +36,7 @@ class FileManagerTest: XCTestCase {
 
     let fileDate = fileManager.GetFileDate(testfile)
 
-    print("date is \(GTime.FormatTime(fileDate!.0))")
+    print("date is \(GTime.FormatTime(fileDate!.accessDate))")
 
 
 

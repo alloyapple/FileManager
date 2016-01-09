@@ -3,6 +3,8 @@ import Foundation
 
 let PATH_MAX = 4096
 
+public typealias fileDates = (accessDate: time_t, modifyDate: time_t, createDate: time_t)
+
 public class GFileManager {
 
   public static let defaultFileManager = GFileManager()
@@ -100,14 +102,14 @@ public class GFileManager {
   }
 
   //access date, modify date, create date
-  public func GetFileDate(filePath: String) -> (time_t, time_t, time_t)? {
+  public func GetFileDate(filePath: String) -> fileDates? {
 
     guard FileIsExists(filePath) else { return nil }
 
     var stat_struct = stat()
     stat(filePath, &stat_struct)
 
-    return (stat_struct.st_atim.tv_sec, stat_struct.st_mtim.tv_sec, stat_struct.st_ctim.tv_sec)
+    return (accessDate: stat_struct.st_atim.tv_sec, modifyDate: stat_struct.st_mtim.tv_sec, createDate: stat_struct.st_ctim.tv_sec)
   }
 
 
