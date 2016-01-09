@@ -4,6 +4,7 @@ import Foundation
 let PATH_MAX = 4096
 
 public typealias FileDate = (accessDate: time_t, modifyDate: time_t, createDate: time_t)
+public typealias FileSize = (fileWithBytes: __off_t, fileWithK: Double, fileWithM: Double, fileWithG: Double)
 
 public class GFileManager {
 
@@ -122,11 +123,11 @@ public class GFileManager {
     return access(filePath, R_OK) != -1
   }
 
-  public func canWrite(filePath: String) -> Bool {
+  public func CanWrite(filePath: String) -> Bool {
     return access(filePath, W_OK) != -1
   }
 
-  public func isDirectory(filePath: String) -> Bool {
+  public func IsDirectory(filePath: String) -> Bool {
     guard FileIsExists(filePath) else { return false }
 
     var stat_struct = stat()
@@ -135,7 +136,7 @@ public class GFileManager {
     return (stat_struct.st_mode & 61440 == 16384)
   }
 
-  public func isFile(filePath: String) -> Bool {
+  public func IsFile(filePath: String) -> Bool {
     guard FileIsExists(filePath) else { return false }
 
     var stat_struct = stat()
@@ -145,7 +146,7 @@ public class GFileManager {
   }
 
 
-  public func isHidden(filePath: String) -> Bool {
+  public func IsHidden(filePath: String) -> Bool {
     guard filePath.characters.count > 0 else { return false }
 
     if filePath.characters.first == "." {
@@ -153,6 +154,16 @@ public class GFileManager {
     } else {
       return false
     }
+  }
+
+  public func GetFileSize(filePath: String) -> FileSize? {
+    guard FileIsExists(filePath) else { return nil }
+
+    var stat_struct = stat()
+    stat(filePath, &stat_struct)
+
+
+    return (fileWithBytes: stat_struct.st_size, fileWithK: Double(stat_struct.st_size) / 1024, fileWithM: Double(stat_struct.st_size) / (1024 * 1024), fileWithG: Double(stat_struct.st_size) / (1024 * 1024 * 1024))
   }
 
 
