@@ -118,7 +118,7 @@ public class GFileManager {
     return access(filePath, X_OK) != -1
   }
 
-  ///TODO:
+
   public func SetExecute(filePath: String, canexe: Bool) -> Bool {
     return chmod(filePath, S_IXGRP) == 0
   }
@@ -128,7 +128,7 @@ public class GFileManager {
     return access(filePath, R_OK) != -1
   }
 
-  ///TODO:
+
   public func SetRead(filePath: String, canexe: Bool) -> Bool {
     return chmod(filePath, S_IRGRP) == 0
   }
@@ -137,7 +137,7 @@ public class GFileManager {
     return access(filePath, W_OK) != -1
   }
 
-  ///TODO:
+  
   public func SetWrite(filePath: String, canexe: Bool) -> Bool {
     return chmod(filePath, S_IWUSR) == 0
   }
