@@ -120,7 +120,7 @@ public class GFileManager {
 
   ///TODO:
   public func SetExecute(filePath: String, canexe: Bool) -> Bool {
-    return false
+    return chmod(filePath, S_IXGRP) == 0
   }
 
 
@@ -130,7 +130,7 @@ public class GFileManager {
 
   ///TODO:
   public func SetRead(filePath: String, canexe: Bool) -> Bool {
-    return false
+    return chmod(filePath, S_IRGRP) == 0
   }
 
   public func CanWrite(filePath: String) -> Bool {
@@ -139,7 +139,7 @@ public class GFileManager {
 
   ///TODO:
   public func SetWrite(filePath: String, canexe: Bool) -> Bool {
-    return false
+    return chmod(filePath, S_IWUSR) == 0
   }
 
   public func IsDirectory(filePath: String) -> Bool {
